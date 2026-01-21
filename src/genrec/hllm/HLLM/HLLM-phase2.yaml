@@ -1,0 +1,14 @@
+model: HLLM
+item_pretrain_dir: ${MODEL_ZOO_PATH}/Qwen3-0.6B # Item and User LLM are initialized by pretrain_dir
+item_llm_init: True
+user_pretrain_dir: ${MODEL_ZOO_PATH}/Qwen3-0.6B
+user_llm_init: True
+use_ft_flash_attn: True
+
+train_timestamp_start: 1664582400 # 2022-10-01
+eval_timestamp_start: 1672531200 # 2023-01-01
+
+resume_checkpoint_dir: ${CKPT_PATH}/${DOMAIN}-phase1
+
+epochs: 2
+optim_args.learning_rate: 5e-5

@@ -1,0 +1,17 @@
+model: HLLM
+item_pretrain_dir: ${MODEL_ZOO_PATH}/Qwen3-0.6B # Item and User LLM are initialized by pretrain_dir
+item_llm_init: False
+user_pretrain_dir: ${MODEL_ZOO_PATH}/Qwen3-0.6B
+user_llm_init: False
+use_ft_flash_attn: True
+
+train_timestamp_start: 1672531200 # 2023-01-01
+eval_timestamp_start: 1680307200 # 2023-04-01
+
+train_timestamp_split: 1664582400 # 2022-10-01
+
+save_result_path:  ${PROJECT_PATH}/data/archive/amazon.tsv
+
+val_only: True
+checkpoint_dir: ${CKPT_PATH}/
+eval_name: ${EVAL_NAME}

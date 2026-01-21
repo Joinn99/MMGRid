@@ -1,0 +1,14 @@
+{
+    "item_pretrain_dir": "Qwen/Qwen3-0.6B",
+    "user_pretrain_dir": "Qwen/Qwen3-0.6B",
+    "gradient_checkpointing": true,
+    "use_ft_flash_attn": true,
+    "item_llm_init": false,
+    "user_llm_init": false,
+    "item_emb_token_n": 1,
+    "loss": "nce",
+    "num_negatives": null,
+    "item_emb_pretrain": false,
+    "nce_thres": null,
+    "load_pretrain": null
+}
