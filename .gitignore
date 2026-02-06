@@ -1,4 +1,4 @@
 data/*
 *.pyc
 *.log
-log*
+log_*
