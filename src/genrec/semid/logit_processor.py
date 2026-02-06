@@ -208,12 +208,12 @@ class SimpleTrieConstrainedProcessor(LogitsProcessor):
                     else:
                         allow[row, :] = False
             else:
-                # 已到 4 层：仅允许 eos（如配置）
+                # If we're at the end of the trie, only allow EOS
                 if self.eos_id is not None and 0 <= self.eos_id < V:
                     allow[row, :] = False
                     allow[row, self.eos_id] = True
                 else:
-                    # 如果未提供 eos，则全部禁用（会导致无法继续采样）
+                    # If no EOS is provided, disable all logits (will cause no further sampling)
                     allow[row, :] = False
 
         logits.masked_fill_(~allow, neg_inf)
